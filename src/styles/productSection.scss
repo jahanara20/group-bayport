@@ -1,0 +1,45 @@
+@import 'utilities';
+
+.product-section {
+    h2 {
+      font-size:1.5rem; @extend .fw-7; margin-bottom: 20px;
+    }
+    .product-grid { @extend .dG; gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  .product-card {
+    @extend ._C; @extend .bg_f; @include border-radius(8px);
+    padding:12px; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+        img {
+        @extend .fullCon; @include border-radius(4px); @extend .p10;
+        height:150px; object-fit:cover;
+        border-bottom:1px solid #e0e0e0; border:1px solid rgb(234, 234, 234);
+        }
+        h4 {
+            @extend .fw-5; margin:5px 0 1px; font-size:1rem; 
+        }
+        .rating {
+        @extend .m0; @extend .clr-orange; font-size:0.9rem;
+        }
+        .price { margin:25px 0 8px; font-size:0.875; }
+        .name_height{ height:auto; min-height:57px; }
+    .customize-btn { outline:none;
+        padding: 8px 16px; @extend .fw-5; @extend .hand; @include border-radius(8px);
+        line-height: 15px; font-size:0.75rem;
+        background: rgba(0, 0, 0, 0); 
+        border: 1px solid rgb(251, 123, 72);
+        @extend .clr-orange; transition: 0.5s; margin-top:12px;
+        &:hover {
+            background-color: #e65a00; @extend .clr-f;
+        }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  } 
+  

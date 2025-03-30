@@ -1,0 +1,92 @@
+@import 'utilities';
+
+ /* Top Bar Styling */
+ .top-bar { @extend .dF;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 12px 20px;
+    .shipping-info, .offer-info, .quick-links, .country-selector {
+      font-size: 0.9rem;
+    }
+    .countdown-timer{padding-left:15px; margin-left: 12px;}
+    .icon {
+      margin-right: 8px;
+    }
+    .quick-links, .country-selector { @extend .hand; }
+    .country-selector{margin:0px 0px 0px 16px; border: none; padding: 0px 0px 0px 16px; @extend .p-R;}
+  }
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size:12px; @extend .fw-6;
+    color:#000;
+    gap:10px;
+  
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center; font-size:0.5rem;
+      font-weight:300;
+    }
+  }
+
+  /* navbar CSS */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap:54px;
+    padding: 20px 0;
+    background-color: #fff;
+    li {
+        position: relative;
+        color: #3F3F89;
+        font-size:0.875rem; 
+        cursor: pointer;
+        font-weight: 500; list-style:none;
+        a{line-height: 36px;}
+        &.active a, &:hover a,  a {
+          color: #3F3F89; font-weight: bold;
+        }
+        &.active>a::after, &:hover>a::after{ content: '';
+        border-bottom: 2px solid #fb7b48;
+        position: absolute;
+        bottom: 1px;
+        left: 0px;
+        right: 0px;
+        animation: line 0.25s ease forwards;
+        }
+    }
+}
+
+  
+
+  
+  
+  @media (max-width: 600px) {
+    .countdown-timer {
+      font-size: 16px;
+      gap: 5px;
+  
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .product-grid {
+      flex-direction: column;
+    }
+
+    .product-card {
+      max-width: 100%;
+    }
+
+    .top-bar {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
