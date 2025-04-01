@@ -3,12 +3,12 @@ import { navItems, printSideImages, sliderImages, services, hangingItems } from 
 import '../styles/banners.scss';
 
 const ServiceItem = ({ icon, label }) => (
-  <div className="service-item">
-    <div className="icon-wrapper">
+  <li className="service-item">
+    <span className="icon-wrapper">
       <img src={icon} alt={label} />
-    </div>
+    </span>
     <p>{label}</p>
-  </div>
+  </li>
 );
 
   const ProductBanners = () => {
@@ -95,11 +95,11 @@ const ServiceItem = ({ icon, label }) => (
                 {/* Print Sides Selection */}
                 <div className="print-sides bg_f">
                   <h1>Custom Vinyl Banners</h1>
-                  <div className="services-container">
+                  <ul className="services-container">
                     {services.map((service, index) => (
                       <ServiceItem key={index} {...service} />
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
                   {/* Material Selection */}

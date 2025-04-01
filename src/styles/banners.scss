@@ -108,7 +108,7 @@ aside{width: 50%;}
       }
     }
     .services-container {
-         @extend .dF; @extend .justify_C; gap: 40px;
+         @extend .dF; @extend .justify_C; gap: 60px; @extend .p0;
     }
     
     .service-item {
