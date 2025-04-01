@@ -1,5 +1,6 @@
 @font-face { font-family: 'Open Sans', sans-serif; font-display:swap;}
 :root {
+    background:#fff;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -9,21 +10,20 @@
   -moz-osx-font-smoothing: grayscale;
   --fs-14: 0.875rem;
   --fs-16: 1rem;
-
 }
 
 $white-color: #ffffff;
 $orange-color: #f1623b;
-.bg_f{background-color: $white-color;}
-.clr-f{color:$white-color;}
-.clr-orange{color: $orange-color;}
+.bg_f{ background-color: $white-color;}
+.clr-f{ color:$white-color;}
+.clr-orange{ color: $orange-color;}
 @mixin border-radius($radius) {
     border-radius: $radius;
 }
 
 html {height:100%;}
 body {
-    height:100%; margin:0; padding:0; line-height:1.5; color:#052F5F;
+    height:100%; margin:0; padding:0; line-height:1.5; color:#303030;
     font-family:'Open Sans', sans-serif;
 }
 img{max-width:100%; height:auto;}                    
@@ -42,22 +42,26 @@ input, textarea, button, select, a, label {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 } 
 .hide_m{display:none;} 
-.TdecorN, a.TdecorN:hover{text-decoration:none;}  
+.TdecorN, a.TdecorN:hover{ text-decoration:none;}  
+.list_n{ list-style: none;}
 .fw-7{font-weight:700;}
 .fw-6{font-weight:600;}
 .fw-5{font-weight:500;}
 .fw-4{font-weight:400;}
 .p-R { position:relative;}
 .p-A { position:absolute;}
+.p-F{ position:fixed;}
 .fullCon {
     position: relative;
     width: 100%;
     box-sizing: border-box;
 }
-.Ucase{text-transform:uppercase;}
+.Ucase{ text-transform:uppercase;}
 ._C{text-align:center;}
 .dF{display: flex;}
 .dG{display:grid;}
+.dB{display:block;}
+.dIB{display:inline-block;}
 .align_C{align-items: center;}
 .justify_C{justify-content: center;}
 .justify_sp{justify-content:space-between;}

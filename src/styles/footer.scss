@@ -1,160 +1,78 @@
+@import 'utilities';
+
 .mainfooter {
-    padding: 40px 0px;
-      .newsletter { text-align: center; background-color: #4c408d; color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        width: 100%;
-    padding: 40px 0px;
-    
+    padding: 40px 0 0;
+      .newsletter { @extend ._C; @extend .clr-f; background-color: #4c408d; gap: 20px; 
+        @extend .dF; @extend .justify_C; @extend .align_C; @extend .fullCon; padding: 40px 0px;
         label {
-          font-size: 18px;
-          font-weight: bold;
-    
-          span {
-            font-size: 14px;
-            margin-left: 10px;
-            color: #ff7f47;
-          }
+          font-size:0.938rem; @extend .fw-6;
+          span { @extend .dB; font-size:0.813rem; margin-left: 10px; }
         }
       .subscribe-form {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-  
+        @extend .dF; @extend .justify_C; gap:10px;
         input {
-          padding: 10px;
-          width: 300px;
-          border-radius: 5px;
-          border: none;
+          padding:10px; width:540px; @include border-radius(5px);  background: none;
+          color: rgb(255, 255, 255); border: 1px solid rgb(118, 111, 159);
         }
-  
-        button {
-          background-color: #ff7f47;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 5px;
-          cursor: pointer;
+        button { @extend .clr-f; @include border-radius(5px); @extend .hand;
+          background-color: #ff7f47; border: none; padding: 10px 20px;
         }
       }
     }
-  
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 20px;
-  
-      .footer-section {
+    .footer-content { @extend .dG; grid-template-columns: repeat(6, 1fr); gap: 20px;
+      .footer-section { color: #666666;
         h4 {
-          margin-bottom: 15px;
-          font-size: 16px;
+          margin-bottom: 15px; font-size: 16px;
         }
-  
-        ul {
-          list-style: none;
-          padding: 0;
-          
+        p{font-size:14px; 
+            a{ color: #666666;
+                &:hover{ @extend .clr-orange;}
+            }
+        }
+        ul { @extend .list_n; @extend .p0;
           li {
-            margin-bottom: 10px; color: #666666;
-            font-size: 14px;
-            cursor: pointer;
-            &:hover {
-              text-decoration: underline;
+            margin-bottom: 10px; 
+            font-size:14px; @extend .hand;
+            a{color: #666666;
+                &:hover {
+                    @extend .TdecorN; @extend .clr-orange;
+                  }
             }
           }
         }
       }
-  
       .reviews {
         .review-badge {
-          background-color: #ff7f47;
-          color: white;
-          padding: 10px;
-          border-radius: 50%;
-          text-align: center;
-          font-weight: bold;
+          background:url(/images/star.svg) no-repeat 0 0; @extend .clr-f; @extend ._C; @extend .fw-7;
+          padding: 10px; height: 168px;  font-size:28px; border-radius: 50%; line-height: 3; width: 168px;
+          background-size: contain;
         }
-      }
-    }
-  
-    .footer-bottom {
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #fff;
-      padding-top: 20px;
-  
-      .social-icons {
-        font-size: 14px;
-        cursor: pointer;
       }
     }
   }
-  
-
-  .footer-payment {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background-color: white;
-    border-top: 1px solid #ccc;
-  
+  .footer-payment { color:#303030; @extend .bg_f; align-items: flex-start;
+    @extend .dF; @extend .justify_sp; @extend .align_C; padding: 20px 0;
+    border-top: 1px solid #EDEDED;
     .footer-content {
-      display: flex;
-      flex-direction: column;
-  
+       display: flex; flex-direction: column;
       .social-section {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-  
-        .social-icons {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-  
-          p {
-            font-size: 14px;
-          }
-  
-          .icons span {
-            font-size: 18px;
-            cursor: pointer;
-          }
-        }
-  
+        @extend .dF; @extend .align_C; gap: 40px;
         .shoppers {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-  
-          p {
-            font-size: 14px;
-            font-weight: bold;
+            @extend .dF;  @extend .align_C; @extend .fw-5; gap:10px; font-size:0.875rem;
+          .logos span{
+             height:38px; margin-right:15px; @extend .dIB;
           }
-  
-          .logos img {
-            width: 40px;
-            height: 40px;
-          }
+          .logo1{background: url(/images/shop-confidence.jpeg) no-repeat left top; width:80px; margin-left: 35px;}
+          .logo2{background: url(/images/shop-confidence.jpeg) no-repeat -95px 0px;  width:50px;}
+          .logo3{background: url(/images/shop-confidence.jpeg) no-repeat -159px 0px; width:35px;}
+          .logo4{background: url(/images/shop-confidence.jpeg) no-repeat -207px 0px; width:32px;}
         }
       }
-  
-      .copyright-section {
-        margin-top: 10px;
-        font-size: 12px;
-        color: #555;
-      }
+      .copyright-section {  font-size: 0.75rem; margin-top: -18px;}
     }
   
     .norton_img {
-      background: url('/images/react.svg') no-repeat center;
-      background-size: contain;
-      width: 200px;
-      height: 80px;
+      background: url('/images/security-badges.jpg') no-repeat center;
+      background-size: contain; width:300px; height: 95px; margin:0;
     }
   }

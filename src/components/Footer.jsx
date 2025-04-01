@@ -1,56 +1,14 @@
 import React from 'react';
+import { CategoryListData, InformationListData, customerServiceList, helpStationList } from '../constants/productConstants';
 import '../styles/footer.scss';
 
-const CategoryListData = [
-  "Custom Banners",
-  "Vinyl Banners",
-  "Banner Stand",
-  "Step & Repeat Displays",
-  "Canopy Tents",
-  "Neon Signs",
-  "Custom Flags",
-  "Asset Tags",
-  "Business Cards",
-];
-
-const InformationListData = [
-  "Order Tracking",
-  "BannerBuzz Wallet",
-  "International Shipping",
-  "Customer Reviews",
-  "Special Offers",
-  "Sitemap",
-  "Blog",
-  "Buzz Catalog",
-  "Banners for a Cause",
-];
-
-const customerServiceList = [
-  "About Us",
-  "Contact Us",
-  "Privacy Policy",
-  "Terms of Use",
-  "Affiliate Program",
-  "Areas of Service",
-];
-
-const helpStationList = [
-  "FAQs",
-  "Return Policy",
-  "Free Design Proofs",
-  "Shipping",
-  "Sample Kit",
-  "Vectorization",
-  "Instant Quote",
-  "Business Inquiries",
-];
 
 const FooterSection = ({ title, data }) => (
   <div className="footer-section">
     <h4>{title}</h4>
     <ul>
       {data.map((item, index) => (
-        <li key={index}>{item}</li>
+        <li key={index}><a href='#'>{item}</a></li>
       ))}
     </ul>
   </div>
@@ -75,10 +33,15 @@ const Footer = () => {
           <div className="footer-content">
             <div className="footer-section">
               <h4>Get In Touch</h4>
-              <p>800-580-4489</p>
-              <p>Need to talk? We’re here 24x7.</p>
-              <p>Write to us</p>
-              <p>For your questions, we’re just an email away.</p>
+              <p>
+                <span className='dB'>800-580-4489</span><a href='#'>Need to talk? We’re here 24x7.</a>
+              </p>
+              <p><span>Write to us<br/></span>
+                <a href='#'>For your questions, we’re just an email away.</a>
+              </p>
+              <p>
+                <span className='dB'>Need help?</span><a href='#'>Find your answers.</a>
+              </p>
             </div>
 
             <FooterSection title="Category" data={CategoryListData} />
@@ -88,7 +51,7 @@ const Footer = () => {
 
             <div className="footer-section reviews">
               <h4>Customer Reviews</h4>
-              <div className="review-badge">97.6K Verified Reviews</div>
+              <div className="review-badge">97.6K</div>
             </div>
           </div>
 
@@ -96,23 +59,15 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="social-section">
                 <div className="social-icons">
-                    <p>Add us on social media?</p>
-                    <div className="icons">
-                    <span>📘</span>
-                    <span>🐦</span>
-                    <span>▶️</span>
-                    <span>📌</span>
-                    <span>📸</span>
-                    </div>
+                    Add us on social media?
                 </div>
                 <div className='shoppers'>
-                    <p>Powerful shoppers</p>
+                    Powerful shoppers
                     <div className="logos">
-                    <img src="bbb-logo.png" alt="BBB" />
-                    <img src="accredited-business.png" alt="Accredited Business" />
-                    <img src="ssa-logo.png" alt="SSA" />
-                    <img src="isa-logo.png" alt="ISA" />
-                    <img src="rocket-logo.png" alt="Rocket" />
+                      <span className='logo1'></span>
+                      <span className='logo2'></span>
+                      <span className='logo3'></span>
+                      <span className='logo4'></span>
                     </div>
                 </div>
                 </div>

@@ -1,71 +1,143 @@
+@import 'utilities';
+
 .productbanners{
     background: rgb(249, 249, 249);
-    padding: 20px 0px;
+    padding: 20px 0px 0;
 }
-.banner-container {
-    display: flex;
+aside{width: 50%;}
+.banner-container { @extend .dF;
     gap: 20px;
-  
     .banner-preview {
-      flex: 1;
-      img {
-        width: 100%;
-        height: auto;
+        flex: 1; padding-bottom: 20px; position: sticky; width: 40%;
+        top: 0; /* Adjust the value to your preference */
+        z-index: 10; /* Ensures it stays above other content */
+        img { width: 100%;  height: auto; }
+   
       }
+    .banner_imgbox{ @extend .dF; @extend .justify_C; @extend .align_C;
+        overflow: hidden; height:775px; margin-bottom:20px;
+        img {
+            width: 100%; height: 100%;
+            object-fit: cover; // Ensures the image covers the container without distortion
+          }
     }
+      
     .material-selection{
         margin: 0px 0px 10px;
-        .img_box{height: 122px;
-            width: 122px;
-            padding: 2px;
-        }
+        .img_box{ height: 122px; width: 122px; padding: 2px; }
     }
-  
+    .print-sides{margin-bottom: 10px;
+        h1{font-size:24px;}
+    }
     .material-selection, .print-sides {
       flex: 1.5; padding: 15px 25px;
       h3 {
-        margin-bottom: 10px; margin-top:0;
+        margin-bottom: 10px; margin-top:0; font-size: 13px; color: rgb(48, 48, 48);
       }
-      .materials{ width:600px; overflow-x:scroll; }
-      .materials, .sides {
-        display: flex;
+     
+    //   .materials{ max-width:600px; }
+      
+      .materials, .sides {@extend .dF;
         gap: 10px;
-  
+        .material-item p{font-size:0.75rem;}
         .material-item, .side-item {
             border: 1px solid rgb(207, 207, 207);
-            border-radius: 8px;
-            padding:2px;
-            
-          cursor: pointer;
-          transition: all 0.3s ease;
+            @include border-radius(8px); @extend .hand;
+            padding:2px 6px;
+            transition: all 0.3s ease;
   
-          &.active {
+          &.active, &:hover {
             border: 1px solid rgb(251, 123, 72);
           }
         }
       }
     }
+.material-selection {
+    .slider-controls {
+        @extend .dF; @extend .justify_C; @extend .align_C;
+        gap: 10px;
+
+        .slider-arrow {
+        @extend .p-R; @extend .hand; @extend .dF; @extend .justify_C; @extend .align_C;
+        width:24px; height:24px; border-radius: 50%; border: none;
+        outline: none; background: #e0e0e0; padding-bottom: 12px; padding-left: 6px; margin-top: -7%;
+        &::before {
+            content: '‹';
+            font-size:1.5rem;
+            color: #000; margin-left:9px; 
+        }
+        &.next::before {
+            content: '›'; margin-left:11px;
+        }
+        }
+    }
+}
+.material-selection.slidediv{padding-bottom: 0;} 
+
+/* Slider Section */
+    .slider {
+        @extend .dF; @extend .justify_C; @extend .align_C; @extend .p-R;
+      gap: 10px; padding: 0 9px;
   
-    .footer {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  
-      .price {
-        font-size: 24px;
-        font-weight: bold;
+      .slider-container {
+        @extend .dF; @extend .justify_C;
+        gap: 10px; width: 100%; overflow: hidden;
+      }
+      img {
+        width: 80px; height: 80px; border: 1px solid rgb(186, 186, 186);
+        @include border-radius(8px); @extend .hand;
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1); border: 1px solid rgb(94, 94, 94);
+        }
       }
   
+      // Arrows using ::before and ::after
+      .slider-arrow {
+        @extend .p-R; @extend .hand; @extend .dF; @extend .justify_C; @extend .align_C;
+        width:24px; height:24px; border-radius: 50%; border: none;
+       outline: none; background: #e0e0e0; padding-bottom: 12px; padding-left: 6px;
+        &::before {
+          content: '‹';
+          font-size:1.5rem;
+          color: #000; margin-left:9px; 
+        }
+        &.next::before {
+          content: '›'; margin-left:11px;
+        }
+      }
+    }
+    .services-container {
+         @extend .dF; @extend .justify_C; gap: 40px;
+    }
+    
+    .service-item {
+        @extend .dF; @extend .justify_C; @extend .align_C;
+        flex-direction: column;
+        .icon-wrapper {
+            @extend .dF; @extend .justify_C; @extend .align_C;
+            background: url(/images/product_info_bg.svg) no-repeat left top;
+            padding:18px 13px 10px;
+            width: 78px;  height:49px; margin: 0px auto;
+        img {
+            width: 50%; height: auto;
+        }
+        }
+        p { font-size:0.75rem; @extend .fw-7; color: rgb(102, 102, 102); margin: 5px 0 0; }
+    }
+  
+    .footer {
+      margin-top:10px; padding: 10px 12px; position:sticky; bottom:0; background: rgb(255, 255, 255);
+      border-radius: 8px 8px 0px 0px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 20px;
+      @extend .dF; @extend .justify_sp; @extend .align_C;
+     
+      .price { font-size:1rem; @extend .fw-6; }
       .design-method {
         background-color: #ff6600;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        border-radius: 8px;
-        cursor: pointer;
+        @extend .clr-f; border: none; padding: 12px 24px;
+        @include border-radius(8px); @extend .hand;
         transition: background-color 0.3s ease;
-  
         &:hover {
           background-color: #ff4500;
         }
