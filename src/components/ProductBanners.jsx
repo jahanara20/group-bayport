@@ -18,6 +18,7 @@ const ServiceItem = ({ icon, label }) => (
     const [currentIndex, setCurrentIndex] = useState(0);
     const [materialIndex, setMaterialIndex] = useState(0);
     const [hangingIndex, setHangingIndex] = useState(0);
+    const [UpgradeIndex, setUpgradeIndex] = useState(0);
 
 
     const handleMaterialChange = (item) => {
@@ -53,6 +54,13 @@ const ServiceItem = ({ icon, label }) => (
   
     const handlePrevhanging = () => {
       setHangingIndex((prev) => (prev - 1 + hangingItems.length) % navItems.length);
+    };
+    const handleNextUpgrade = () => {
+      setUpgradeIndex((prev) => (prev + 1) % hangingItems.length);
+    };
+  
+    const handlePrevUpgrade = () => {
+      setUpgradeIndex((prev) => (prev - 1 + hangingItems.length) % navItems.length);
     };
   
     return (
@@ -159,12 +167,12 @@ const ServiceItem = ({ icon, label }) => (
                         </div>
                   </div>
                   <div className="material-selection bg_f slidediv">
-                    <h3>Choose Material</h3>
+                    <h3>Upgrade to Premium</h3>
                     <div className="slider-controls">
-                      <button className="slider-arrow" onClick={handlePrevMaterial}></button>
+                      <button className="slider-arrow" onClick={handlePrevUpgrade}></button>
                       <div className="materials">
                       
-                        {[...navItems, ...navItems].slice(materialIndex, materialIndex + 4).map((item, index) => (
+                        {[...navItems, ...navItems].slice(UpgradeIndex, UpgradeIndex + 4).map((item, index) => (
                           <div className='_C' key={index}>
                             <div
                               className={`material-item ${activeMaterial.name === item.name ? 'active' : ''}`}
@@ -178,7 +186,7 @@ const ServiceItem = ({ icon, label }) => (
                           </div>
                         ))}
                       </div>
-                      <button className="slider-arrow next" onClick={handleNextMaterial}></button>
+                      <button className="slider-arrow next" onClick={handleNextUpgrade}></button>
                     </div>
                   </div>
   
